@@ -10,6 +10,13 @@
   <%= @post.text %>
 </p>
 
+<p><b>Tags:</b></p>
+<ul>
+  <% @post.tags.each do |tag| %>
+    <li><%= tag.name %></li>
+  <% end %>
+</ul>
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

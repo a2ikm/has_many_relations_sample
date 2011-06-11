@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   # GET /posts/new.xml
   def new
     @post = Post.new
+    @taggings = Array.new(3) { Tagging.new }
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @taggings = @post.taggings
   end
 
   # POST /posts

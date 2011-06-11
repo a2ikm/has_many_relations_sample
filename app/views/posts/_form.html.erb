@@ -19,6 +19,14 @@
     <%= f.label :text %><br />
     <%= f.text_area :text %>
   </div>
+  <div class="field">
+    Tags<br />
+    <% @taggings.each do |tagging| %>
+      <%= f.fields_for "taggings_attributes[]", tagging do |tf| %>
+        <%= tf.select :tag_id, Tag.all.map { |x| [x.name, x.id] } %>
+      <% end %>
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
