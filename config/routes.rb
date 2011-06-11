@@ -1,4 +1,8 @@
 HasManyRelationsSample::Application.routes.draw do
+  resources :tags
+
+  resources :posts
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
